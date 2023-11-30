@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js_93_project-code_busters09/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Boutique</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="module" crossorigin src="/js_93_project-code_busters09/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_93_project-code_busters09/assets/vendor-cfb45d56.js">
+    <link rel="modulepreload" crossorigin href="/js_93_project-code_busters09/assets/footer-send-9a59ec19.js">
+    <link rel="stylesheet" href="/js_93_project-code_busters09/assets/footer-send-7299fe0a.css">
+  </head>
+
+  <body>
+    <header>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html" class="header-logo">
+                <svg class="header-icon-logo" width="20" height="20">
+                    <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-tdesign_cabbage"></use>
+                </svg>
+                Food Boutique
+            </a>
+        </div>
+        <div class="header-buttons">
+            <a href="index.html" class="home-btn">Home</a>
+            <a href="cart.html" class="header-cart-btn">
+                <svg class="header-icon-cart" width="14" height="14">
+                    <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-heroicons-solid_shopping-cart"></use>
+                </svg>
+                <span class="cart-title">cart (0)</span>
+            </a>
+        </div>
+    </div>
+</header>
+    <section id="hero">
+  <div class="container">
+    <h1 class="hero-title">
+      Welcome to the <span class="hero-title-span">Food</span> Boutique!
+    </h1>
+    <h2 class="hero-text">
+      With Food Boutique, you're not just subscribing to food, you're signing up
+      for a fresher, fitter, and happier you.
+    </h2>
+    <div class="hero-img-wrap">
+      <img class="hero-sticker" src="/js_93_project-code_busters09/assets/organic_food-42117473.png" alt="organic" width="100" loading="lazy" />
+      <picture>
+        <source media="(min-width: 1440px)" srcset="/js_93_project-code_busters09/assets/hero_img_desctop_1x-min-63888bef.jpg 1x, /js_93_project-code_busters09/assets/hero_img_desctop_2x-min-9cd92608.jpg 2x" type="image/jpg" />
+        <source media="(min-width: 768px)" srcset="/js_93_project-code_busters09/assets/hero_img_tablet_1x-min-ffe59559.jpg 1x, /js_93_project-code_busters09/assets/hero_img_tablet_2x-min-eeb6cc98.jpg 2x" type="image/jpg" />
+        <source media="(min-width: 320px)" srcset="/js_93_project-code_busters09/assets/hero_img_mobile_1x-min-d7824de2.jpg 1x, /js_93_project-code_busters09/assets/hero_img_mobile_2x-min-25c52852.jpg 2x" type="image/jpg" />
+        <img class="hero-img" src="/js_93_project-code_busters09/assets/hero_img_mobile_1x-min-d7824de2.jpg" alt="Fresh vegetables" width="335"
+          loading="lazy" />
+      </picture>
+    </div>
+  </div>
+</section>
+    <main>
+  <section id="content-block">
+    <div class="container">
+      <h3 class="filter-title">Filters:</h3>
+      <div class="filters">
+        <form class="submit-form">
+          <div class="input-container">
+            <input type="text" name="search" class="search" placeholder="Search for anything" />
+            <button type="submit" id="search-button" class="search-btn">
+              <svg class="search-icon" width="20" height="20">
+                <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-Vector"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="input-container">
+          <select name="product-categories" class="categories" aria-label="categories"></select>
+          <svg class="chevron-down-icon" width="20" height="20">
+            <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#down-arrow"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!--spinner-->
+    <div class="loader-container" hidden>
+      <span class="loader"></span>
+    </div>
+
+    <div class="container">
+      <div class="main-products">
+        <div class="filter-box">
+          <ul class="filter-box__list"></ul>
+          <div class="no-products-message visually-hidden">
+            <h2>Nothing was found for the selected <span>filters...</span></h2>
+            <p>
+              Try adjusting your search parameters or browse our range by other
+              criteria to find the perfect product for you.
+            </p>
+
+          </div>
+          <div class="pagination">
+
+            <div class="pag-ribbon tui-pagination" id="tui-pagination-container">
+              <!-- <button type="button" class="pag-btn pag-item">
+                <svg class="arrow-icon" width="12" height="12">
+                  <use href="./img/icons.svg#icon-caret-small-left"></use>
+                </svg>
+              </button> -->
+              <!-- <ul class="pag-wrapper">
+                <li><button type="button" class="pag-item">1</button></li>
+                <li><button type="button" class="pag-item">2</button></li>
+                <li><button type="button" class="pag-item">...</button></li>
+                <li><button type="button" class="pag-item">7</button></li>
+                <li><button type="button" class="pag-item">8</button></li>
+              </ul> -->
+              <button type="button" class="pag-btn pag-item">
+                <svg class="arrow-icon" width="12" height="12">
+                  <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-caret-small-right"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="popular-discount-box">
+          <h2 class="popular__title">Popular products</h2>
+          <ul class="popular-products__list"></ul>
+          <h2 class="discount__title">Discount products</h2>
+          <ul class="discount-products__list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+    <footer class="footer">
+  <div class="container footer-container">
+    <div class="logo-text-container">
+      <a href="./index.html" class="footer-logo link">
+        <svg class="footer-icon-logo" width="16" height="16">
+          <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-tdesign_cabbage"></use>
+        </svg>
+        <p class="footer-logo-name">Food Boutique</p>
+      </a>
+      <div class="footer-socials-container">
+        <ul class="footer-socials-list">
+          <li class="footer-list-item">
+            <a href="https://www.facebook.com/goITclub/" class="footer-list-link link" target="_blank" rel="noopener noreferrer"><svg class="footer-socials-icon"
+                width="24" height="24">
+                <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-facebook"></use>
+              </svg></a>
+          </li>
+          <li class="footer-list-item">
+            <a href="https://www.instagram.com/goitclub/" class="footer-list-link link" target="_blank" rel="noopener noreferrer"><svg class="footer-socials-icon"
+                width="24" height="24">
+                <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-instagram"></use>
+              </svg></a>
+          </li>
+          <li class="footer-list-item">
+            <a href="https://www.youtube.com/c/GoIT" class="footer-list-link link"
+            target="_blank" rel="noopener noreferrer"><svg class="footer-socials-icon"
+                width="24" height="24">
+                <use href="/js_93_project-code_busters09/assets/icons-91d3aeb0.svg#icon-youtube"></use>
+              </svg></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p class="footer-shop-moto">
+        Discover the Variety of Flavors and Quality
+      </p>
+      <p class="footer-shop-descr">
+        An online store where you will find fresh, natural and delicious
+        products for a healthy life and unforgettable gastronomic adventures.
+      </p>
+    </div>
+    <div class="subscribe-container">
+      <p class="subscribe-text">Subscribe and learn about new products!</p>
+      <form class="send-form" id="subscriptionForm">
+        <label class="send-label">
+          <input type="email" class="footer-input" name="email" id="emailInput" placeholder="Email" multiple /></label>
+        <button type="submit" class="footer-send-button">Send</button>
+      </form>
+    </div>
+
+    <div class="footer-rights">
+      <p class="footer-all-rights">Food Boutique. All rights reserved.</p>
+      <p class="footer-policy">
+        <a href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank" rel="noopener noreferrer">
+          Privacy Policy
+        </a>
+        <span style="margin: 0 8px">/</span>
+        <a href="https://en.wikipedia.org/wiki/Terms_of_service" target="_blank" rel="noopener noreferrer">Terms of
+          Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    <div class="modal">
+  <div class="modal-content"></div>
+</div>
+
+
+<!-- modal -->
+<div class="modal-cart-submit">
+  <div class="cart-modal-content"></div>
+</div>
+    <!-- Кнопка scroll up -->
+    <div id="scrolltoTopBtn" class="isShownBtn isHidden">
+      <i class="fa-solid fa-angles-up fa-sm"></i>
+    </div>
+  
+    
+  </body>
+</html>
