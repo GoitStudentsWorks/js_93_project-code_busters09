@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/project-code_busters09/",
+    "build": "vite build --base=/js_93_project-code_busters09/",
     "preview": "vite preview"
   },
   "devDependencies": {
